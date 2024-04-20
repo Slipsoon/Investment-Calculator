@@ -2,6 +2,14 @@ export default function InvestmentInputs({
   investmentData,
   onInvestmentDataChange,
 }) {
+  function validateDurationInput(e, criteriaInput) {
+    if (e.target.value < 1) {
+      alert("Value cannot be lower than 1");
+    } else {
+      onInvestmentDataChange(e, criteriaInput);
+    }
+  }
+
   return (
     <section id="user-input">
       <div className="input-group">
@@ -35,7 +43,7 @@ export default function InvestmentInputs({
           <label>Duration</label>
           <input
             type="number"
-            onChange={(e) => onInvestmentDataChange(e, "duration")}
+            onChange={(e) => validateDurationInput(e, "duration")}
             value={investmentData.duration}
           />
         </p>

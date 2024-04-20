@@ -17,7 +17,7 @@ function App() {
 
   function changeInvestmentCriteria(e, criteriaInput) {
     setInvestmentCriteria((prevInvestmentCriteria) => {
-      return { ...prevInvestmentCriteria, [criteriaInput]: e.target.value };
+      return { ...prevInvestmentCriteria, [criteriaInput]: +e.target.value };
     });
   }
 
