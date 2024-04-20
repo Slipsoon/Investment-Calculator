@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import InvestmentInputs from "./components/InvestmentInputs";
+import InvestmentResult from "./components/InvestmentResult";
 
 const DEFAULT_INVESTMENT_CRITERIA = {
   initialInvestment: 10000,
@@ -27,6 +28,7 @@ function App() {
         investmentData={investmentCriteria}
         onInvestmentDataChange={changeInvestmentCriteria}
       />
+      <InvestmentResult investmentData={investmentCriteria} />
     </>
   );
 }
